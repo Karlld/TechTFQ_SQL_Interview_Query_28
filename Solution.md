@@ -13,7 +13,7 @@ WITH RECURSIVE split_items AS (SELECT 1 AS pos,
 							          items,
 							          SPLIT_PART(items,',',pos+1) AS item_split
 							       FROM split_items 
-							       WHERE  SPLIT_PART(items,',',pos+1) <> ''),
+							       WHERE  SPLIT_PART(items,',',pos+1) != ''),
 								   
     lengths AS (SELECT pos,
 	       id, 
